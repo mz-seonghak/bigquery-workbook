@@ -1,0 +1,626 @@
+---
+---
+
+.book-body {
+    overflow-y: scroll;
+}
+
+.book-body .book-header {
+    position: fixed;
+    width: 100%;
+}
+
+.book.with-summary .book-body .book-header {
+    position: fixed;
+    width: calc(100% - 300px);
+}
+
+.book-body .body-inner {
+    /* position: absolute; */
+    margin-top: 50px;
+    min-height: calc(100% - 50px);
+}
+
+.book-body .body-inner .page-wrapper {
+    min-height: calc(100% - 46px);
+}
+
+.book-body .body-inner .page-wrapper .page-inner {
+    padding-bottom: 20px;
+}
+
+@media (max-width: 1240px) {
+    .book-body .body-inner .navigation {
+        max-width: calc(50% - 3px);
+        width: calc(50% - 3px);
+    }
+}
+
+.book .book-body .book-header {
+    background: #ffffff;
+}
+
+.book.color-theme-1 .book-body .book-header {
+    background: #f3eacb;
+}
+
+.book.color-theme-2 .book-body .book-header {
+    background: #1c1f2b;
+}
+
+/* GitHub 아이콘 정렬 */
+.book-header a.github-edit-link {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+
+.page-inner {
+    max-width: {{ site.page_width | default: '800px' }};
+}
+
+.back-to-top {
+    right: calc((100% - 300px - min(100% - 300px, {{ site.page_width | default: '800px' }})) / 2 + 25px);
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+    /* background-color: rgba(125, 125, 125, 0.2); */
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 5px;
+    background-color: rgba(7, 17, 27, .2);
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    width: 5px;
+    background-color: rgba(125, 125, 125, 0.2);
+    -webkit-border-radius: 6px;
+}
+
+/* Style for search page on mobile screens */
+
+#book-search-input-link {
+    padding: 6px;
+    background: 0 0;
+    background: inherit;
+    transition: top .5s ease;
+    border-bottom: 1px solid rgba(0,0,0,.07);
+    border-top: 1px solid rgba(0,0,0,.07);
+    margin-bottom: 10px;
+    margin-top: -1px;
+}
+
+#book-search-input-link a {
+    width: 100%;
+    background: 0 0;
+    border: 1px solid transparent;
+    box-shadow: none;
+    outline: 0;
+    line-height: 38px;
+    padding: 7px 7px;
+    color: #757575;
+}
+
+#book-search-input {
+    display: block;
+}
+#book-search-input-link {
+    display: none;
+}
+
+@media (max-width: 1240px) {
+    #book-search-input {
+        display: none;
+    }
+    #book-search-input-link {
+        display: block;
+    }
+}
+
+#book-search-input-inside {
+    padding: 6px;
+    background: 0 0;
+    transition: top .5s ease;
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.07);
+    border-top: 1px solid rgba(0,0,0,.07);
+    margin-bottom: 10px;
+    margin-top: -1px;
+}
+
+#book-search-input-inside input {
+    width: 100%;
+    background: 0 0;
+    border: 1px solid transparent;
+    box-shadow: none;
+    outline: 0;
+    line-height: 22px;
+    padding: 7px 7px;
+    color: inherit;
+}
+
+
+/* Custom font settings */
+
+/* Serif - 나눔명조 */
+.book.font-family-0,
+.book.font-family-0 .book-body,
+.book.font-family-0 .book-summary,
+.book.font-family-0 .book-header,
+.book.font-family-0 .markdown-section,
+.book.font-family-0 .markdown-section h1,
+.book.font-family-0 .markdown-section h2,
+.book.font-family-0 .markdown-section h3,
+.book.font-family-0 .markdown-section h4,
+.book.font-family-0 .markdown-section h5,
+.book.font-family-0 .markdown-section h6,
+.book.font-family-0 .markdown-section p,
+.book.font-family-0 .markdown-section li,
+.book.font-family-0 .markdown-section td,
+.book.font-family-0 .markdown-section th,
+.book.font-family-0 .book-summary ul.summary li a {
+    font-family: "Noto Serif", "RIDIBatang", Georgia, serif !important;
+}
+
+/* Sans - Google Sans + Noto Sans KR */
+.book.font-family-1,
+.book.font-family-1 .book-body,
+.book.font-family-1 .book-summary,
+.book.font-family-1 .book-header,
+.book.font-family-1 .markdown-section,
+.book.font-family-1 .markdown-section h1,
+.book.font-family-1 .markdown-section h2,
+.book.font-family-1 .markdown-section h3,
+.book.font-family-1 .markdown-section h4,
+.book.font-family-1 .markdown-section h5,
+.book.font-family-1 .markdown-section h6,
+.book.font-family-1 .markdown-section p,
+.book.font-family-1 .markdown-section li,
+.book.font-family-1 .markdown-section td,
+.book.font-family-1 .markdown-section th,
+.book.font-family-1 .book-summary ul.summary li a {
+    font-family: "Google Sans", "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Render wide tables */
+
+.table-wrapper {
+    overflow-x: scroll;
+}
+
+/* Tips, warnings, and dangers */
+
+.markdown-section blockquote.block-tip {
+    border-color: var(--c-tip);
+    background-color: var(--c-tip-bg);
+    color: var(--c-tip-text);
+    font-family: var(--font-family);
+}
+
+.markdown-section blockquote.block-tip h1 {
+    color: var(--c-tip-title);
+}
+
+.markdown-section blockquote.block-tip h2 {
+    color: var(--c-tip-title);
+}
+
+.markdown-section blockquote.block-tip h3 {
+    color: var(--c-tip-title);
+}
+
+.markdown-section blockquote.block-tip h4 {
+    color: var(--c-tip-title);
+}
+
+.markdown-section blockquote.block-tip h5 {
+    color: var(--c-tip-title);
+}
+
+.markdown-section blockquote.block-tip h6 {
+    color: var(--c-tip-title);
+}
+
+.markdown-section blockquote.block-warning {
+    border-color: var(--c-warning);
+    background-color: var(--c-warning-bg);
+    color: var(--c-warning-text);
+    font-family: var(--font-family);
+}
+
+.markdown-section blockquote.block-warning h1 {
+    color: var(--c-warning-title);
+}
+
+.markdown-section blockquote.block-warning h2 {
+    color: var(--c-warning-title);
+}
+
+.markdown-section blockquote.block-warning h3 {
+    color: var(--c-warning-title);
+}
+
+.markdown-section blockquote.block-warning h4 {
+    color: var(--c-warning-title);
+}
+
+.markdown-section blockquote.block-warning h5 {
+    color: var(--c-warning-title);
+}
+
+.markdown-section blockquote.block-warning h6 {
+    color: var(--c-warning-title);
+}
+
+.markdown-section blockquote.block-danger {
+    border-color: var(--c-danger);
+    background-color: var(--c-danger-bg);
+    color: var(--c-danger-text);
+    font-family: var(--font-family);
+}
+
+.markdown-section blockquote.block-danger h1 {
+    color: var(--c-danger-title);
+}
+
+.markdown-section blockquote.block-danger h2 {
+    color: var(--c-danger-title);
+}
+
+.markdown-section blockquote.block-danger h3 {
+    color: var(--c-danger-title);
+}
+
+.markdown-section blockquote.block-danger h4 {
+    color: var(--c-danger-title);
+}
+
+.markdown-section blockquote.block-danger h5 {
+    color: var(--c-danger-title);
+}
+
+.markdown-section blockquote.block-danger h6 {
+    color: var(--c-danger-title);
+}
+
+:root {
+    /* Google Brand Colors */
+    --google-blue: #4285F4;
+    --google-red: #EA4335;
+    --google-yellow: #FBBC05;
+    --google-green: #34A853;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --border-color: #dadce0;
+
+    /* Tips, warnings, dangers - Google style */
+    --c-tip: var(--google-green);
+    --c-tip-bg: rgba(52, 168, 83, 0.1);
+    --c-tip-text: #1e4620;
+    --c-tip-title: var(--google-green);
+    --c-warning: var(--google-yellow);
+    --c-warning-bg: rgba(251, 188, 5, 0.15);
+    --c-warning-text: #5f4b00;
+    --c-warning-title: #b28900;
+    --c-danger: var(--google-red);
+    --c-danger-bg: rgba(234, 67, 53, 0.1);
+    --c-danger-text: #5f1e18;
+    --c-danger-title: var(--google-red);
+
+    --font-family: "Google Sans", "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-family-title: "Google Sans", "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 사이드바 타이틀 */
+.book .book-summary ul.summary li.header {
+    font-weight: 700;
+}
+
+/* 코드 폰트 - Cascadia Code */
+code, pre, .markdown-section code, .markdown-section pre {
+    font-family: "Cascadia Code", Consolas, Monaco, monospace;
+}
+
+/* 폰트 크기 조정 - 기본 베이스 */
+html {
+    font-size: 18px;
+}
+
+.book, .book-body {
+    line-height: 1.85;
+}
+
+.markdown-section {
+    line-height: 1.85;
+}
+
+/* 타이틀 크기 */
+.markdown-section h1 {
+    font-size: 2.4em;
+}
+
+.markdown-section h2 {
+    font-size: 2em;
+}
+
+.markdown-section h3 {
+    font-size: 1.6em;
+}
+
+.markdown-section h4 {
+    font-size: 1.35em;
+}
+
+/* 사이드바 폰트 크기 */
+.book .book-summary ul.summary li a {
+    font-size: 16px;
+}
+
+/* 코드 블록 폰트 크기 */
+.markdown-section code, .markdown-section pre {
+    font-size: 0.9em;
+}
+
+/* 테이블 폰트 크기 */
+.markdown-section table {
+    font-size: 0.95em;
+}
+
+/* ========================================
+   Google Style Enhancements
+   ======================================== */
+
+/* Google 색상 포인트 점 */
+.google-colors {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 5px 0;
+}
+
+/* Page Footer 높이 조정 */
+.page-footer {
+    padding-top: 10px !important;
+    padding-bottom: 0 !important;
+}
+
+.google-colors span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.google-colors span:hover {
+    transform: scale(1.3);
+}
+
+.google-colors .blue { background: var(--google-blue); }
+.google-colors .red { background: var(--google-red); }
+.google-colors .yellow { background: var(--google-yellow); }
+.google-colors .green { background: var(--google-green); }
+
+/* Bottom Nav 스타일 */
+.page-footer .bottom-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 5px 20px !important;
+}
+
+.page-footer .bottom-nav .book-title {
+    font-weight: 500;
+    color: #333;
+}
+
+.page-footer .bottom-nav .copyright {
+    font-size: 12px;
+    color: #666;
+}
+
+.book.color-theme-2 .page-footer .bottom-nav .book-title {
+    color: #ccc;
+}
+
+.book.color-theme-2 .page-footer .bottom-nav .copyright {
+    color: #8a8a8a;
+}
+
+/* 링크 스타일 - Google Blue */
+.markdown-section a {
+    color: var(--google-blue);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.markdown-section a:hover {
+    color: #1a73e8;
+    text-decoration: underline;
+}
+
+/* 헤더 스타일 - Google 색상 악센트 */
+.markdown-section h1 {
+    color: var(--text-primary);
+    border-bottom: 3px solid var(--google-blue);
+    padding-bottom: 10px;
+}
+
+.markdown-section h2 {
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--google-green);
+    padding-bottom: 8px;
+}
+
+.markdown-section h3 {
+    color: var(--text-primary);
+    border-left: 4px solid var(--google-yellow);
+    padding-left: 12px;
+}
+
+.markdown-section h4 {
+    color: var(--text-secondary);
+}
+
+/* 사이드바 스타일 */
+.book .book-summary {
+    border-right: 1px solid var(--border-color);
+}
+
+.book .book-summary ul.summary li.active > a,
+.book .book-summary ul.summary li a:hover {
+    color: var(--google-blue) !important;
+    background: rgba(66, 133, 244, 0.08);
+}
+
+.book .book-summary ul.summary li.active > a {
+    border-right: 3px solid var(--google-blue);
+}
+
+.book .book-summary ul.summary li.divider {
+    background: linear-gradient(90deg, var(--google-blue), var(--google-red), var(--google-yellow), var(--google-green));
+    height: 2px;
+    opacity: 0.6;
+}
+
+/* 스크롤바 - Google Blue */
+::-webkit-scrollbar-thumb:vertical {
+    background-color: var(--google-blue);
+    opacity: 0.7;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+    background-color: #1a73e8;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: var(--google-blue);
+    opacity: 0.7;
+}
+
+/* 코드 블록 스타일 */
+.markdown-section code {
+    background: #f8f9fa;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 2px 6px;
+    color: var(--google-red);
+}
+
+.markdown-section pre {
+    background: #f8f9fa;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--google-blue);
+    border-radius: 4px;
+}
+
+.markdown-section pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* 인용구 스타일 */
+.markdown-section blockquote {
+    border-left: 4px solid var(--google-blue);
+    background: rgba(66, 133, 244, 0.05);
+    color: var(--text-secondary);
+}
+
+/* 테이블 스타일 - Google Material */
+.markdown-section table {
+    border-collapse: collapse;
+    border: 1px solid var(--border-color);
+}
+
+.markdown-section table th {
+    background: #f8f9fa;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.markdown-section table td {
+    border: 1px solid var(--border-color);
+}
+
+.markdown-section table tr:hover {
+    background: rgba(66, 133, 244, 0.04);
+}
+
+/* 네비게이션 버튼 */
+.book-body .navigation {
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.book-body .navigation:hover {
+    color: var(--google-blue);
+}
+
+/* 헤더 버튼 */
+.book .book-header .btn {
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.book .book-header .btn:hover {
+    color: var(--google-blue);
+}
+
+/* 검색 인풋 포커스 */
+#book-search-input input:focus,
+#book-search-input-inside input:focus {
+    border-color: var(--google-blue);
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+/* 선택 영역 하이라이트 */
+::selection {
+    background: rgba(66, 133, 244, 0.3);
+    color: inherit;
+}
+
+::-moz-selection {
+    background: rgba(66, 133, 244, 0.3);
+    color: inherit;
+}
+
+/* ========================================
+   Font Family Override (최우선)
+   ======================================== */
+
+/* Serif - 나눔명조 (최우선) */
+html body .book.font-family-0 .markdown-section,
+html body .book.font-family-0 .markdown-section * {
+    font-family: "Noto Serif", "RIDIBatang", Georgia, serif !important;
+}
+
+html body .book.font-family-0 .markdown-section code,
+html body .book.font-family-0 .markdown-section pre,
+html body .book.font-family-0 .markdown-section code *,
+html body .book.font-family-0 .markdown-section pre * {
+    font-family: "Cascadia Code", Consolas, Monaco, monospace !important;
+}
+
+/* Sans - Google Sans + Noto Sans KR (최우선) */
+html body .book.font-family-1 .markdown-section,
+html body .book.font-family-1 .markdown-section * {
+    font-family: "Google Sans", "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+html body .book.font-family-1 .markdown-section code,
+html body .book.font-family-1 .markdown-section pre,
+html body .book.font-family-1 .markdown-section code *,
+html body .book.font-family-1 .markdown-section pre * {
+    font-family: "Cascadia Code", Consolas, Monaco, monospace !important;
+}

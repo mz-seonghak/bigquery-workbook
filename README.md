@@ -125,7 +125,6 @@ cd "파티션 예제"
 ```
 bigquery-workbook/
 ├── README.md                           # 이 파일
-├── CLAUDE.md                          # AI 어시스턴트를 위한 가이드
 ├── 빅쿼리 *.md                        # 26개 주제별 가이드 문서
 ├── Oracle-*-가이드.md                  # Oracle 마이그레이션 가이드
 ├── 빅쿼리 DuckDB 연동.md              # DuckDB와 BigQuery 연동 가이드

@@ -1,0 +1,10 @@
+# Claude Code
+CLAUDE.md
+.claude/
+__worklog__/
+__config__/
+
+# Jekyll
+docs/_site/
+docs/.jekyll-cache/
+docs/.sass-cache/
